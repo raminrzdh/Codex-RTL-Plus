@@ -41,7 +41,7 @@ Codex RTL Plus فایل Electron برنامه را به‌صورت محلی patc
 ### macOS
 
 ```bash
-npx --yes github:raminrzdh/Codex-RTL-Plus
+npx codex-rtl-plus
 ```
 
 اگر macOS اجازهٔ تغییر برنامه را نداد، در مسیر زیر دسترسی App Management را برای Terminal فعال کنید:
@@ -55,19 +55,19 @@ System Settings → Privacy & Security → App Management
 PowerShell را با دسترسی Administrator اجرا کنید:
 
 ```powershell
-npx --yes github:raminrzdh/Codex-RTL-Plus
+npx codex-rtl-plus
 ```
 
 ### Linux
 
 ```bash
-sudo npx --yes github:raminrzdh/Codex-RTL-Plus
+sudo npx codex-rtl-plus
 ```
 
 برای یک مسیر نصب غیرمعمول، فایل `app.asar` را مشخص کنید:
 
 ```bash
-npx --yes github:raminrzdh/Codex-RTL-Plus --asar "/full/path/to/app.asar"
+npx codex-rtl-plus --asar "/full/path/to/app.asar"
 ```
 
 ## بازگردانی نسخهٔ اصلی
@@ -75,7 +75,7 @@ npx --yes github:raminrzdh/Codex-RTL-Plus --asar "/full/path/to/app.asar"
 اپ را ببندید و دستور زیر را اجرا کنید:
 
 ```bash
-npx --yes github:raminrzdh/Codex-RTL-Plus --restore
+npx codex-rtl-plus --restore
 ```
 
 نسخهٔ اصلی در پوشهٔ `~/.codex-rtl/backups/` نگهداری می‌شود. در macOS اطلاعات لازم برای بازگردانی bundle و signature نیز حفظ می‌شوند.
@@ -118,7 +118,7 @@ npm run build
 Codex RTL Plus is a local RTL patch for the ChatGPT/Codex desktop app. It detects Persian, Arabic, Hebrew, and mixed-direction content; keeps code and math LTR; and updates the prompt composer live while typing or pasting. Install it from this repository with:
 
 ```bash
-npx --yes github:raminrzdh/Codex-RTL-Plus
+npx codex-rtl-plus
 ```
 
 Use the **Codex Smart RTL** panel to control conversation direction, prompt direction, fonts, line height, and the Persian keyboard `@` fix.

@@ -1,10 +1,10 @@
 {
-  "name": "codex-rtl",
-  "version": "1.6.3",
-  "description": "A smart RTL (Right-to-Left) patcher with UI settings for the ChatGPT/Codex desktop application.",
+  "name": "codex-rtl-plus",
+  "version": "1.0.0",
+  "description": "Smart Persian, Arabic, Hebrew, and mixed-text RTL support for the ChatGPT/Codex desktop app.",
   "main": "./bin/index.js",
   "bin": {
-    "codex-rtl": "bin/index.js"
+    "codex-rtl-plus": "bin/index.js"
   },
   "files": [
     "bin",
