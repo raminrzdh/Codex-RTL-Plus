@@ -84,6 +84,29 @@ test('settings widget and stylesheets mount', () => {
     assert.ok(window.document.getElementById('codex-rtl-style'), 'dynamic stylesheet missing');
 });
 
+test('settings widget is accessible, click-controlled, and links to the repository', () => {
+    const { window } = run(DEFAULT);
+    const widget = window.document.querySelector('.rtl-widget-container');
+    const trigger = widget.querySelector('.rtl-widget-trigger');
+    const panel = window.document.getElementById('rtl-widget-panel');
+    const repo = widget.querySelector('.rtl-repo-link');
+
+    assert.strictEqual(trigger.getAttribute('aria-expanded'), 'false');
+    assert.strictEqual(panel.getAttribute('aria-hidden'), 'true');
+    trigger.click();
+    assert.ok(widget.classList.contains('is-open'));
+    assert.strictEqual(trigger.getAttribute('aria-expanded'), 'true');
+    assert.strictEqual(panel.getAttribute('aria-hidden'), 'false');
+    assert.strictEqual(repo.href, 'https://github.com/raminrzdh/Codex-RTL-Plus');
+    assert.strictEqual(repo.getAttribute('rel'), 'noopener noreferrer');
+
+    for (const id of ['rtl-toggle-btn', 'rtl-force-btn', 'rtl-prompt-btn', 'rtl-at-btn']) {
+        const control = window.document.getElementById(id);
+        assert.strictEqual(control.getAttribute('role'), 'switch');
+        assert.ok(control.hasAttribute('aria-checked'));
+    }
+});
+
 test('Arabic block gets dir=rtl, English stays LTR', () => {
     const { window } = run(DEFAULT);
     const arabic = window.document.querySelector('.thread-scroll-container > div:nth-child(1)');
