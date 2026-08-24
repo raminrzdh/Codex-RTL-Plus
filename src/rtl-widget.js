@@ -9,7 +9,7 @@ if (!document.getElementById('rtl-widget-style')) {
         '.rtl-widget-container *{box-sizing:border-box}',
         '.rtl-widget-trigger{position:relative;width:46px;height:46px;border:1px solid rgba(255,255,255,.18);border-radius:15px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,var(--rtl-accent),#5362db 56%,#3846b7);box-shadow:0 10px 26px rgba(53,65,158,.34),inset 0 1px 0 rgba(255,255,255,.28);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}',
         '.rtl-widget-trigger:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(53,65,158,.42),inset 0 1px 0 rgba(255,255,255,.3)}',
-        '.rtl-widget-trigger:focus-visible,.rtl-close:focus-visible,.rtl-switch:focus-visible,.rtl-field:focus-visible,.rtl-reset:focus-visible,.rtl-repo-link:focus-visible{outline:3px solid color-mix(in srgb,var(--rtl-accent) 58%,white);outline-offset:3px}',
+        '.rtl-widget-trigger:focus-visible,.rtl-close:focus-visible,.rtl-switch:focus-visible,.rtl-field:focus-visible,.rtl-reset:focus-visible{outline:3px solid color-mix(in srgb,var(--rtl-accent) 58%,white);outline-offset:3px}',
         '.rtl-widget-trigger-mark{display:flex;align-items:center;gap:2px;font-size:11px;font-weight:800;letter-spacing:-.06em}',
         '.rtl-widget-trigger-mark svg{width:15px;height:15px}',
         '.rtl-widget-status-dot{position:absolute;right:-2px;top:-2px;width:10px;height:10px;border:2px solid light-dark(#fff,#22242a);border-radius:99px;background:#7d879b}',
@@ -44,11 +44,8 @@ if (!document.getElementById('rtl-widget-style')) {
         '.rtl-range{min-width:0;width:100%;accent-color:var(--rtl-accent);cursor:pointer}',
         '.rtl-reset{flex:0 0 auto;width:27px;height:27px;border:1px solid var(--rtl-line);border-radius:8px;background:transparent;color:var(--rtl-muted);cursor:pointer}',
         '.rtl-reset:hover{color:var(--rtl-text);background:var(--rtl-card)}',
-        '.rtl-widget-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 5px 3px}',
+        '.rtl-widget-footer{display:flex;align-items:center;justify-content:center;padding:10px 5px 3px}',
         '.rtl-widget-version{color:var(--rtl-muted);font-size:9px;letter-spacing:.05em}',
-        '.rtl-repo-link{display:inline-flex;align-items:center;gap:6px;border-radius:8px;color:var(--rtl-text)!important;text-decoration:none!important;font-size:10px;font-weight:700}',
-        '.rtl-repo-link:hover{color:var(--rtl-accent)!important}',
-        '.rtl-repo-link svg{width:14px;height:14px}',
         '#rtl-settings-wrapper.is-disabled{opacity:.42;pointer-events:none;filter:saturate(.5)}',
         '@media (max-width:520px){.rtl-widget-container{right:12px;bottom:12px}.rtl-widget-panel{right:0;bottom:56px}}',
         '@media (prefers-reduced-motion:reduce){.rtl-widget-container *{transition:none!important}}'
@@ -118,10 +115,6 @@ widgetWrapper.innerHTML = `
 
     <footer class="rtl-widget-footer">
       <span class="rtl-widget-version">CODEX RTL PLUS</span>
-      <a class="rtl-repo-link" href="https://github.com/raminrzdh/Codex-RTL-Plus" target="_blank" rel="noopener noreferrer" aria-label="Open Codex RTL Plus repository on GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.28-5.27-5.68 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0C17.03 5.3 18 5.61 18 5.61c.63 1.58.23 2.75.12 3.04.73.8 1.17 1.82 1.17 3.08 0 4.41-2.71 5.38-5.29 5.67.42.36.79 1.06.79 2.14v3c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
-        <span>GitHub repository</span>
-      </a>
     </footer>
   </section>`;
 document.body.appendChild(widgetWrapper);
