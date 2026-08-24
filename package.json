@@ -1,6 +1,6 @@
 {
   "name": "codex-rtl-plus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Smart Persian, Arabic, Hebrew, and mixed-text RTL support for the ChatGPT/Codex desktop app.",
   "main": "./bin/index.js",
   "bin": {
@@ -38,7 +38,6 @@
   "homepage": "https://github.com/raminrzdh/Codex-RTL-Plus#readme",
   "dependencies": {
     "@electron/asar": "^4.2.0",
-    "figlet": "^1.11.0",
     "ora": "^9.4.1",
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2"

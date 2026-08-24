@@ -10,7 +10,7 @@
 
 [![npm version](https://img.shields.io/npm/v/codex-rtl-plus?style=flat-square&color=6478ff)](https://www.npmjs.com/package/codex-rtl-plus)
 [![npm downloads](https://img.shields.io/npm/dm/codex-rtl-plus?style=flat-square&color=4dc7d9)](https://www.npmjs.com/package/codex-rtl-plus)
-[![tests](https://img.shields.io/badge/tests-53%20passing-54c99a?style=flat-square)](https://github.com/raminrzdh/Codex-RTL-Plus)
+[![tests](https://img.shields.io/badge/tests-54%20passing-54c99a?style=flat-square)](https://github.com/raminrzdh/Codex-RTL-Plus)
 [![license](https://img.shields.io/badge/license-MIT-8b93a7?style=flat-square)](#مجوز)
 
 [نصب](#نصب) · [امکانات](#امکانات) · [تنظیمات](#پنل-تنظیمات) · [عیب‌یابی](#عیب‌یابی) · [English](#english)
