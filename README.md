@@ -2,6 +2,8 @@
 
 # Codex RTL Plus
 
+**[فارسی](#persian) · [English](#english) · [العربية](#arabic)**
+
 **پشتیبانی هوشمند RTL برای اپ دسکتاپ ChatGPT و Codex**
 
 متن فارسی، عربی، عبری و محتوای ترکیبی را درست نمایش می‌دهد؛ بدون اینکه جهت کد، فرمول، ترمینال یا رابط اصلی برنامه را خراب کند.
@@ -16,6 +18,10 @@
 </div>
 
 ---
+
+<a id="persian"></a>
+
+## راهنمای فارسی
 
 ## چرا Codex RTL Plus؟
 
@@ -211,37 +217,234 @@ npm pack --dry-run
 
 ---
 
-## English
+<a id="english"></a>
+
+## English guide
 
 **Codex RTL Plus** adds smart right-to-left support to the ChatGPT/Codex desktop app. It correctly handles Persian, Arabic, Hebrew, and mixed RTL/LTR sentences—including RTL prose that begins with an English word—while keeping code, terminals, diffs, math, and application chrome LTR.
 
-### Install
+For example, the following sentence is semantically RTL even though it starts with a Latin word:
 
-Quit the ChatGPT/Codex desktop app, then run:
+```text
+Codex می‌تواند این File را دوباره بررسی کند.
+```
+
+The engine evaluates the complete sentence, applies an RTL base direction, and preserves the internal LTR order of `Codex` and `File`.
+
+### Features
+
+- Smart Persian, Arabic, Hebrew, and mixed-text detection
+- Correct direction for RTL sentences that begin with a Latin word
+- Live prompt-composer updates while typing or pasting
+- Mixed multi-line content support
+- Conversation-only scoping; sidebars and toolbars remain unchanged
+- LTR isolation for code blocks, inline code, diffs, and terminals
+- LTR islands for LaTeX and arithmetic such as `2 + 3 = 5`
+- RTL-aware tables
+- Independent Persian/Arabic, English, and code fonts
+- Built-in Vazirmatn font
+- Persian keyboard `Shift + 2 → @` fix
+- Versioned backups and safe restoration
+
+### Installation
+
+Install a recent version of [Node.js](https://nodejs.org/), completely quit the ChatGPT/Codex desktop app, then run:
 
 ```bash
 npx codex-rtl-plus
 ```
 
-### Highlights
+On Windows, run PowerShell as Administrator. On Linux, use:
 
-- Smart mixed-text direction detection
-- Live prompt-composer direction on typing and paste
-- LTR isolation for code, LaTeX, and arithmetic
-- RTL-aware tables and multi-line content
-- Separate Persian/Arabic, English, and code fonts
-- Built-in Vazirmatn font
-- Versioned backup and safe restore
-- macOS ASAR integrity and bundle-signing support
+```bash
+sudo npx codex-rtl-plus
+```
 
-### Restore
+To patch a non-standard `app.asar` location:
+
+```bash
+npx codex-rtl-plus --asar "/full/path/to/app.asar"
+```
+
+On macOS, grant your terminal App Management access if installation reports a permission error:
+
+```text
+System Settings → Privacy & Security → App Management
+```
+
+### Settings panel
+
+Click the floating **RTL** button to open the settings panel.
+
+| Setting | Purpose |
+| --- | --- |
+| Smart RTL | Enable or disable the complete direction engine |
+| Force RTL | Force conversation prose to use RTL |
+| Prompt RTL | Detect prompt direction while typing and pasting |
+| FA / AR | Set the Persian and Arabic font |
+| English | Set the Latin font |
+| Code | Set the code, diff, and terminal font |
+| Line height | Adjust conversation line spacing |
+| Shift + 2 → @ | Fix the Persian keyboard shortcut |
+
+Settings are stored in `~/.codex-rtl.json`.
+
+### Upgrade
+
+Quit the desktop app, restore the current patch, and install the latest release:
+
+```bash
+npx codex-rtl-plus --restore
+npx codex-rtl-plus@latest
+```
+
+ChatGPT/Codex updates replace the patched archive. Run the installation command again after an application update.
+
+### Uninstall and restore
 
 ```bash
 npx codex-rtl-plus --restore
 ```
 
-See [Issues](https://github.com/raminrzdh/Codex-RTL-Plus/issues) for bug reports and support.
+Versioned backups are stored in `~/.codex-rtl/backups/` outside the application bundle.
 
-## مجوز
+### Development
 
-این پروژه تحت مجوز MIT منتشر شده است.
+```bash
+git clone https://github.com/raminrzdh/Codex-RTL-Plus.git
+cd Codex-RTL-Plus
+npm ci
+npm test
+```
+
+After changing files under `src/`, rebuild and validate the generated payload:
+
+```bash
+npm run build
+npm test
+npm pack --dry-run
+```
+
+Report bugs through [GitHub Issues](https://github.com/raminrzdh/Codex-RTL-Plus/issues).
+
+---
+
+<a id="arabic"></a>
+
+<div dir="rtl">
+
+## الدليل العربي
+
+يضيف **Codex RTL Plus** دعماً ذكياً للكتابة من اليمين إلى اليسار في تطبيق ChatGPT/Codex لسطح المكتب. يتعامل مع النصوص العربية والفارسية والعبرية والمحتوى المختلط، بما في ذلك الجمل التي تبدأ بكلمة إنجليزية، مع إبقاء الشيفرة البرمجية والطرفية والفروقات والمعادلات وواجهة التطبيق باتجاه LTR.
+
+على سبيل المثال، تبدأ الجملة التالية بكلمة لاتينية لكنها جملة عربية واتجاهها الصحيح RTL:
+
+```text
+Codex يمكنه مراجعة هذا File مرة أخرى.
+```
+
+يفحص المحرك الجملة كاملة، ثم يحدد اتجاهها الأساسي مع الحفاظ على الترتيب الداخلي الصحيح للكلمات الإنجليزية.
+
+### المزايا
+
+- اكتشاف ذكي للنصوص العربية والفارسية والعبرية والمختلطة
+- معالجة الجمل RTL التي تبدأ بكلمة لاتينية
+- تحديث مباشر لاتجاه مربع كتابة الطلب أثناء الكتابة أو اللصق
+- دعم المحتوى المختلط متعدد الأسطر
+- حصر تغييرات RTL داخل المحادثة دون تغيير الشريط الجانبي والأدوات
+- إبقاء كتل الشيفرة والفروقات والطرفية باتجاه LTR
+- عزل LaTeX والعمليات الحسابية مثل `2 + 3 = 5`
+- دعم الجداول العربية واتجاه خلاياها
+- خطوط منفصلة للعربية/الفارسية والإنجليزية والشيفرة
+- تضمين خط Vazirmatn
+- إصلاح اختصار `Shift + 2 → @` للوحة المفاتيح الفارسية
+- نسخ احتياطية مرقمة واستعادة آمنة
+
+### التثبيت
+
+ثبّت إصداراً حديثاً من [Node.js](https://nodejs.org/)، ثم أغلق تطبيق ChatGPT/Codex بالكامل وشغّل:
+
+```bash
+npx codex-rtl-plus
+```
+
+في Windows افتح PowerShell بصلاحية Administrator. وفي Linux استخدم:
+
+```bash
+sudo npx codex-rtl-plus
+```
+
+لتحديد مسار غير افتراضي لملف `app.asar`:
+
+```bash
+npx codex-rtl-plus --asar "/full/path/to/app.asar"
+```
+
+إذا ظهر خطأ صلاحيات في macOS، امنح تطبيق الطرفية صلاحية App Management من المسار:
+
+```text
+System Settings → Privacy & Security → App Management
+```
+
+### لوحة الإعدادات
+
+انقر زر **RTL** العائم لفتح لوحة الإعدادات.
+
+| الإعداد | الوظيفة |
+| --- | --- |
+| Smart RTL | تشغيل محرك الاتجاه أو إيقافه بالكامل |
+| Force RTL | فرض RTL على نص المحادثة |
+| Prompt RTL | اكتشاف اتجاه الطلب أثناء الكتابة واللصق |
+| FA / AR | تحديد خط العربية والفارسية |
+| English | تحديد خط النص اللاتيني |
+| Code | تحديد خط الشيفرة والفروقات والطرفية |
+| Line height | ضبط تباعد أسطر المحادثة |
+| Shift + 2 → @ | إصلاح اختصار لوحة المفاتيح الفارسية |
+
+تُحفظ الإعدادات في الملف `~/.codex-rtl.json`.
+
+### الترقية
+
+أغلق التطبيق، استعد النسخة الأصلية، ثم ثبّت أحدث إصدار:
+
+```bash
+npx codex-rtl-plus --restore
+npx codex-rtl-plus@latest
+```
+
+تستبدل تحديثات ChatGPT/Codex ملف التطبيق المعدّل، لذلك أعد تشغيل أمر التثبيت بعد تحديث التطبيق.
+
+### الإزالة والاستعادة
+
+```bash
+npx codex-rtl-plus --restore
+```
+
+تُحفظ النسخ الاحتياطية المرقمة خارج حزمة التطبيق في `~/.codex-rtl/backups/`.
+
+### التطوير
+
+```bash
+git clone https://github.com/raminrzdh/Codex-RTL-Plus.git
+cd Codex-RTL-Plus
+npm ci
+npm test
+```
+
+بعد تعديل ملفات `src/` شغّل:
+
+```bash
+npm run build
+npm test
+npm pack --dry-run
+```
+
+للإبلاغ عن مشكلة، استخدم [GitHub Issues](https://github.com/raminrzdh/Codex-RTL-Plus/issues).
+
+</div>
+
+## مجوز / License / الترخيص
+
+این پروژه تحت مجوز MIT منتشر شده است.<br>
+This project is released under the MIT License.<br>
+هذا المشروع منشور بموجب ترخيص MIT.
