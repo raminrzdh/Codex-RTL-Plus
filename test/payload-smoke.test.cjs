@@ -106,6 +106,21 @@ test('settings widget is accessible, click-controlled, and has no repository lin
     }
 });
 
+test('line-height reset uses a centered SVG control', () => {
+    const { window } = run(DEFAULT);
+    const reset = window.document.getElementById('rtl-lh-reset');
+    const range = window.document.getElementById('rtl-lh-input');
+    const label = window.document.querySelector('label[for="rtl-lh-input"]');
+
+    assert.ok(reset.querySelector('svg'), 'reset icon should be an SVG, not a baseline glyph');
+    assert.strictEqual(label.textContent, 'Line height');
+    assert.ok(range.closest('.rtl-range-wrap'));
+
+    const css = window.document.getElementById('rtl-widget-style').textContent;
+    assert.ok(css.includes('.rtl-reset{width:27px;height:27px'));
+    assert.ok(css.includes('display:grid;place-items:center'));
+});
+
 test('Arabic block gets dir=rtl, English stays LTR', () => {
     const { window } = run(DEFAULT);
     const arabic = window.document.querySelector('.thread-scroll-container > div:nth-child(1)');

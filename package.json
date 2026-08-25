@@ -1,6 +1,6 @@
 {
   "name": "codex-rtl-plus",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Smart Persian, Arabic, Hebrew, and mixed-text RTL support for the ChatGPT/Codex desktop app.",
   "main": "./bin/index.js",
   "bin": {

@@ -983,9 +983,10 @@
                 '.rtl-field-label{font-size:11px;font-weight:620}',
                 '.rtl-field{width:100%;height:30px;border:1px solid var(--rtl-line);border-radius:9px;padding:0 9px;background:light-dark(rgba(255,255,255,.75),rgba(5,7,12,.28));color:var(--rtl-text);font:500 11px/1 inherit}',
                 '.rtl-field::placeholder{color:var(--rtl-muted)}',
-                '.rtl-range-wrap{display:flex;align-items:center;gap:7px}',
-                '.rtl-range{min-width:0;width:100%;accent-color:var(--rtl-accent);cursor:pointer}',
-                '.rtl-reset{flex:0 0 auto;width:27px;height:27px;border:1px solid var(--rtl-line);border-radius:8px;background:transparent;color:var(--rtl-muted);cursor:pointer}',
+                '.rtl-range-wrap{height:30px;display:grid;grid-template-columns:minmax(0,1fr) 27px;align-items:center;gap:7px}',
+                '.rtl-range{display:block;min-width:0;width:100%;height:20px;margin:0;accent-color:var(--rtl-accent);cursor:pointer}',
+                '.rtl-reset{width:27px;height:27px;border:1px solid var(--rtl-line);border-radius:8px;padding:0;display:grid;place-items:center;background:transparent;color:var(--rtl-muted);cursor:pointer}',
+                '.rtl-reset svg{display:block;width:14px;height:14px}',
                 '.rtl-reset:hover{color:var(--rtl-text);background:var(--rtl-card)}',
                 '.rtl-widget-footer{display:flex;align-items:center;justify-content:center;padding:10px 5px 3px}',
                 '.rtl-widget-version{color:var(--rtl-muted);font-size:9px;letter-spacing:.05em}',
@@ -1045,7 +1046,7 @@
               <label class="rtl-field-row"><span class="rtl-field-label">FA / AR</span><input id="rtl-fafont-input" class="rtl-field" type="text" placeholder="Vazirmatn" value="${savedFaFont}" spellcheck="false"></label>
               <label class="rtl-field-row"><span class="rtl-field-label">English</span><input id="rtl-enfont-input" class="rtl-field" type="text" placeholder="System" value="${savedEnFont}" spellcheck="false"></label>
               <label class="rtl-field-row"><span class="rtl-field-label">Code</span><input id="rtl-codefont-input" class="rtl-field" type="text" placeholder="System mono" value="${savedCodeFont}" spellcheck="false"></label>
-              <label class="rtl-field-row"><span class="rtl-field-label">Line height</span><span class="rtl-range-wrap"><input id="rtl-lh-input" class="rtl-range" type="range" min="1.2" max="2.5" step="0.1" value="${savedLH}"><button id="rtl-lh-reset" class="rtl-reset" type="button" aria-label="Reset line height">↺</button></span></label>
+              <div class="rtl-field-row"><label class="rtl-field-label" for="rtl-lh-input">Line height</label><div class="rtl-range-wrap"><input id="rtl-lh-input" class="rtl-range" type="range" min="1.2" max="2.5" step="0.1" value="${savedLH}"><button id="rtl-lh-reset" class="rtl-reset" type="button" aria-label="Reset line height"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 6.1H2.7V3.6"/><path d="M3 6a7 7 0 1 1-.1 7.8"/></svg></button></div></div>
             </div>
 
             <div class="rtl-section">
